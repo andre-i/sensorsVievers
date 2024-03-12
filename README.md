@@ -4,7 +4,7 @@
 датчики. Значения показаний датчиков отправляются клиенту, где они показываются на шкалах 
 приборов.
 
-Если кто заинтересуется подробностями - они файле  <a href="digitalSensors/data/src/help.html">Help.html</a>
+Если кто заинтересуется подробностями - они файле  <a href="https://github.com/sensorsViewers/digitalSensors/data/src/help.html">Help.html</a>
 
 Картинки с изображениями находятся в папке <a href="digitalSensors/data/src/img">Images</a>
 
