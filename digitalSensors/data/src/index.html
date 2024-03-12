@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<!-- 
+    чтобы вставить свой модуль необходимо 
+ 1) сформировать вид нового измерительного прибора 
+    подробности на https://canvas-gauges.com/ сайт
+	на гитхабе https://github.com/Mikhus/canvas-gaugesв 
+    праку производить в файле modulesGauges.js
+ 2) в классе "MyModules" прописать свой прибор ( подробности там-же )
+ 3) здесь добавить кнопки в таблицу, в  переменную devicesButtons  добавить
+	описание своей кнопки
+ 4) В папке digitalSensors в файлах digitslSensors.ino и Sensors 
+    добавить поддержку своего устройства 
+-->
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Измерительные приборы</title>
+  <!--   <script src="gauge.min.js"></script>
+   <script src="modules.js"></script>
+    <script src="modulesGauges.js"></script>
+    <script src="devicePanel.js"></script>
+    <script src="main.js"></script>  -->
+        <script src="out.min.js"></script>   
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="errPanel" class="errMSG"></div>
+    <table>
+        <tr>
+            <td>
+                <!--  REFRESH --> <!-- onclick="initModules('/list')" -->
+                <img src="refresh.png" class="rule" id="refresh" alt="Обновить" max-width="48px" 
+                max-height="48px" onclick="initModules('/list')">
+                <a href="help.html" >
+                	<img src="quest.png" alt="question sign"  class="rule" >
+                </a>
+            </td>
+            <td rowspan="5">
+                <div id="dashboard" class="panel"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="mPanel">
+                <div class="disable">INA219</div>
+                <button class="valButton" id="volt">V</button>
+                <button class="valButton" id="current">I</button>
+                <button class="valButton" id="power">P</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="mPanel">
+                <div class="disable">BMP280</div>
+                <button class="valButton" id="pressure">P</button>
+                <button class="valButton" id="bmp_t">t</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="mPanel">
+                <div class="disable">AHT20</div>
+                <button class="valButton" id="humidity">
+                    <bigger>φ</bigger>
+                </button>
+                <button class="valButton" id="aht_t">t</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="mPanel">
+                <div class="disable">DS18B20</div>
+                <button class="valButton" id="ds_t">t</button>
+            </td>
+        </tr>
+    </table>
+    <!-- script src="sensorDevice.js"></script -->
+    <script>
+
+        let devicesButtons = {
+            //  INA219
+            'INA219': {
+                'U': document.getElementById('volt'),
+                'I': document.getElementById('current'),
+                'P': document.getElementById('power')
+            },
+            // BMP280
+            'BMP280': {
+                'P': document.getElementById('pressure'),
+                't': document.getElementById('bmp_t')
+            },
+            // AHT20
+            'AHT20': {
+                'Fi': document.getElementById('humidity'),
+                't': document.getElementById('aht_t')
+            },
+            // DS18B20
+            'DS18B20': {
+                't': document.getElementById('ds_t')
+            }
+        }
+
+        // main handler
+        let devController = new DevicesController(devicesButtons, document.getElementById("dashboard"));
+        
+        // click handler for refresh
+        function initModules() {
+            document.getElementById('errPanel').innerText = '';
+            devController.init();
+        }
+    </script>
+
+
+
+</body>
+
+</html>

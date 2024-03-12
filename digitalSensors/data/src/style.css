@@ -1,0 +1,215 @@
+/*
+
+panel - device panel (hold all)
+devPanel - hold gauge and menu witch choose diapason
+scalesMenu -  menu of scales
+rule -  button for refresh modules list
+valButton - set visibility of chhosed device
+devButton - choose scales parameter on gauge
+*/
+
+
+body, html { 
+	width: 100%; 
+	height: 100%; 
+	background-color: rgb(207, 217, 203);
+}
+
+/*
+
+*/
+table {
+	margin: 0.2em;
+}
+
+.onTop{
+	margin-left: 10; 
+	vertical-align : top
+}
+
+/*  root div element for show all gauges */
+.panel{
+	padding : 0.2em;
+	margin: 0.1em;
+	height: 92vh;
+	width: 90vw; 
+}
+
+/*
+	div element for choosed gauge. Contain scale buttons at all.
+*/
+.devPanel {
+	display: inline-block;
+	padding: 0.3em;
+	margin : 0.2em;
+	background-color: rgb(122, 146, 135);
+	text-align: center;
+	border-radius: 1%;
+}
+
+/*
+	Button for refres connected devices
+*/
+.rule#refresh:hover{
+	background-color: rgb(170, 230, 255);
+	cursor: pointer;
+}
+
+.rule#refresh:active{
+	background-color: #faf;
+}
+
+/*   buttons  */
+.rule {
+	align-self: center;
+	padding: 3px;
+	border : 1px ridge rgb(40, 5, 100);
+	border-radius: 7%;
+	background-color: rgb(230, 255, 255);
+	color :rgb(5, 4, 4)
+}
+
+/*     buttons left side ( contain all connected devices sensors )
+	for on - off checked sensor to show
+*/
+.valButton{
+	font-size: large;
+	font-weight: bold;
+	text-align : center;
+	padding: 5px;
+	margin-left: 2px;
+	margin-bottom: 0.3em;
+	width: 2em;
+	background-color: #333;
+}
+
+.button-enabled{
+	background-color: #8ae;
+}
+
+.button-enabled:hover{
+	background-color: rgb(16, 91, 151);
+}
+
+.button-enabled-active{
+	background-color: #119;
+	color: #eee;
+}
+
+/*
+====================   scale menu   ==========================
+==============================================================
+*/
+
+/*   menu of choose diapason of device  */
+.scalesMenu{
+	background-color:inherit;
+	border:rgb(100, 62, 5) solid 2px;
+	border-radius: 5%;
+	color: #ddf;
+	width :  fit-content;
+	padding-top: 0.1em;
+	margin-left: 0.2em;
+
+}
+/*  button on scale menu */
+.devButton{
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	color: rgb(229, 255, 255);
+	background-color: #119;
+	margin : 0.2em 0.4em 0.3em 0.4em;
+	padding: 0.2em 0.4em 0.2em 0.4em;
+}
+
+.devButton:hover{
+	background-color: #39e;
+}
+
+.devButton:active{
+	background-color: #8ae;
+	color: #119;
+}
+
+/*
+==========================   show BIG in digits  ==========================
+===========================================================================
+*/
+
+/*
+  Dialog - for contain checked 
+  sensor value in full window mode
+*/
+dialog{
+	width: 94vw;
+	height: 90vh;
+	border-radius: 3vh;
+	background-color: #cee;
+}
+
+/*
+	Label for sensor value name in dialog
+*/
+.hugePanelLabel{
+	color : rgb(41, 63, 78);
+	font-size: 16vh;
+	text-align: center;
+	margin-bottom: 4vh;
+}
+
+/*
+	There panel show sensors value in full window mode
+*/
+/*  chrom */
+.chrom_digitPanel{
+	height: 62vh;  
+	width: 84vw;
+	margin : auto;
+	text-align: center;
+ 	/* padding-right: 10vh; */
+	/* padding-top: 3vh; */
+	border: #333 solid 4px;
+	border-radius: 3vh;
+	background-color: rgb(65, 102, 109);
+	color: rgb(229, 255, 255);
+	font-size: 24vw;
+	font-weight: bold;
+}
+/* other than chrom */
+.digitPanel{
+	height: 40vh;  
+	width: 84vw;
+	margin : auto;
+	text-align: center;
+ 	padding-top: 8vh; 
+	padding-bottom: 8vh;
+	border: #333 solid 4px;
+	border-radius: 10vh;
+	background-color: rgb(65, 102, 109);
+	color: rgb(229, 255, 255);
+	font-size: 18vw;
+	font-weight: bold;
+}
+
+/* =============================  ERRORS  ================================
+==========================================================================
+*/
+
+/*
+	For panel on top window for show errors message
+*/
+.errMSG {
+	color:#900;
+	background-color: #daa;
+	text-align: center;
+	font-size: larger;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
