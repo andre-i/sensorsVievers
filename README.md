@@ -8,4 +8,4 @@
 Если кто заинтересуется подробностями - они файле  <a href="https://github.com/sensorsViewers/digitalSensors/data/src/help.html">Help.html</a>
 Картинки с изображениями находятся в папке <a href="digitalSensors/data/src/img">Images</a>
 ### Для показа значений в виде приборов используется javaScript библиотека [gauge.js](https://canvas-gauges.com)
-К сожалению этот <i>маркдаун</i> я не знаю и как запихнуть html страницу в  readme.md тоже, а заново переписывать справку в другом формате как-то неправильно.
+
