@@ -228,7 +228,8 @@ void initWIFI(){
 
   Serial.print(F("Setting soft-AP ... "));
   Serial.println(WiFi.softAP(util.getESP_SSID(), util.getPASSWD()) ? "Ready" : "Failed!");
-
+  Serial.print(F("AP password : "));
+  Serial.println(util.getPASSWD());
   Serial.print(F("Soft-AP IP address = "));
   Serial.println(WiFi.softAPIP());
   /*
